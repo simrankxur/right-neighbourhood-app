@@ -4,8 +4,9 @@
         <p>Find the right neighbourhood for you</p>
         
         <div class="search">
-            <input matInput class="round" placeholder="Enter a postcode" value="">
-            <input type="submit" class="corner" value="" />
+            <input matInput #postcode class="round" placeholder="Enter a postcode"
+                value="" (keyup.enter)="search(postcode.value)">
+            <input type="submit" class="corner" value="" (click)="search(postcode.value)" />
         </div>
     </div>
 </div>
