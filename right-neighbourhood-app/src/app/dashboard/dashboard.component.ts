@@ -25,14 +25,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (postcode) {
       console.log(postcode);
 
-      // uncomment to test
-      // this._postcodeService.loadData(postcode)
-      //   .pipe(takeUntil(this.destroyed$))
-      //   .subscribe(data => {
-      //     this.postcodeData = data;
+      this._postcodeService.loadData(postcode)
+        .pipe(takeUntil(this.destroyed$))
+        .subscribe(data => {
+          this.postcodeData = data;
 
-      //     console.log(data.restaurants);
-      //   });
+          console.log(data.restaurants);
+        });
     } else {
       this._router.navigate(['']);
     }
