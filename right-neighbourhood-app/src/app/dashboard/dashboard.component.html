@@ -1,5 +1,7 @@
 <p>dashboard works!</p>
 <div>
     <p>{{ postcodeData?.crime ?? '...' }}</p>
+    <p>{{ postcodeData?.rents ?? '...' | json }}</p>
+    <p>{{ postcodeData?.prices ?? '...' | json }}</p>
     <p>{{ postcodeData?.restaurants ?? '...' | json }}</p>
 </div>

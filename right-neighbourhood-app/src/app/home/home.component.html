@@ -8,6 +8,7 @@
                 value="" (keyup.enter)="search(postcode.value)">
             <input type="submit" class="corner" value="" (click)="search(postcode.value)" />
         </div>
+        <p *ngIf="showErrorMsg">Please enter a valid postcode</p>
     </div>
 </div>
 

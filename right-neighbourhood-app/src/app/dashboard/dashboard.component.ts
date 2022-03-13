@@ -14,28 +14,36 @@ export class DashboardComponent implements OnInit, OnDestroy {
     private _route: ActivatedRoute,
     private _router: Router,
     private _postcodeService: PostcodeDataService,
-  ) { }
+  ) {
+    const state = this._router.getCurrentNavigation()?.extras.state as any;
+
+    if (state) {
+      this.long = state?.long;
+      this.lat = state?.lat;;
+    }
+  }
 
   public postcodeData: PostcodeData | null = null;
+  public long: string = '';
+  public lat: string = '';
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
   ngOnInit(): void {
     const postcode = this._route.snapshot.queryParamMap.get('postcode');
 
-    if (postcode) {
+    if (postcode && this.long && this.lat) {
       console.log(postcode);
 
-      this._postcodeService.loadData(postcode)
+      this._postcodeService.loadData(postcode, this.long, this.lat)
         .pipe(takeUntil(this.destroyed$))
         .subscribe(data => {
           this.postcodeData = data;
 
-          console.log(data.restaurants);
+          console.log(data.crime);
         });
     } else {
       this._router.navigate(['']);
     }
-
   }
 
   ngOnDestroy() {
