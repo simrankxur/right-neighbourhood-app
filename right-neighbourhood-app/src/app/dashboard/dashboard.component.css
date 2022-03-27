@@ -1,0 +1,16 @@
+.title {
+    display: inline-block;
+    margin: 0;
+    font-size: 72px;
+    font-weight: 900;
+    color: #0b0b0b;
+}
+
+.mat-grid-tile {
+    border: solid 2px #000;
+}
+
+.mat-grid-tile-content
+{
+    flex-direction: column;
+}  

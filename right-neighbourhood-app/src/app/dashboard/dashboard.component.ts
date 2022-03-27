@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
   }
 
+  public postcode: string = '';
   public postcodeData: PostcodeData | null = null;
   public long: string = '';
   public lat: string = '';
@@ -32,7 +33,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     const postcode = this._route.snapshot.queryParamMap.get('postcode');
 
     if (postcode && this.long && this.lat) {
-      console.log(postcode);
+      this.postcode = postcode.toUpperCase();
 
       this._postcodeService.loadData(postcode, this.long, this.lat)
         .pipe(takeUntil(this.destroyed$))
