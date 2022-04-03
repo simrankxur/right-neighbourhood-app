@@ -1,0 +1,22 @@
+<div *ngIf="data">
+    <p style="padding-left:1rem;">Crime</p>
+    <mat-table [dataSource]="data">
+        <ng-container matColumnDef="category">
+          <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.category}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="street">
+            <mat-header-cell *matHeaderCellDef> Street </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.location.street.name}} </mat-cell>
+          </ng-container>
+      
+        <ng-container matColumnDef="month">
+          <mat-header-cell *matHeaderCellDef> Month </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.month}} </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="['category', 'street', 'month']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['category', 'street', 'month']"></mat-row>
+      </mat-table>
+</div>

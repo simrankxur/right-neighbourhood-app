@@ -11,13 +11,20 @@ import { PostcodeDataService } from './postcode-data.service';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
+import { CrimeComponent } from './crime/crime.component';
+import { PricesComponent } from './prices/prices.component';
+import { RentsComponent } from './rents/rents.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    CrimeComponent,
+    PricesComponent,
+    RentsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +33,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     NoopAnimationsModule,
     MatCardModule,
     MatGridListModule,
+    MatTableModule,
   ],
   providers: [PostcodeDataService],
   bootstrap: [AppComponent]

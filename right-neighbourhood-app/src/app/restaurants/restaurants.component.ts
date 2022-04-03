@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Restaurant } from '../dashboard/restaurant';
 
 @Component({
   selector: 'app-restaurants',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RestaurantsComponent implements OnInit {
   constructor() { }
 
-  @Input() jsonData: string | undefined;
+  @Input() data: Restaurant[] | undefined;
 
   ngOnInit(): void {
   }

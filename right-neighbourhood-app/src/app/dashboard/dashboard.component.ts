@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         .subscribe(data => {
           this.postcodeData = data;
 
-          console.log(data.crime);
+          console.log(data.prices);
         });
     } else {
       this._router.navigate(['']);

@@ -1,4 +1,27 @@
-<div style="padding: 0 0 0 1rem; height: 15rem; overflow-y: auto;" *ngIf="jsonData">
-    <p>Restaurants</p>
-    <p>{{ jsonData ?? '...' | json }}</p>
+<div *ngIf="data">
+    <p style="padding-left:1rem;">Restaurants</p>
+    <mat-table [dataSource]="data">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.address}} </mat-cell>
+          </ng-container>
+      
+        <ng-container matColumnDef="type">
+          <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.type}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="distance">
+          <mat-header-cell *matHeaderCellDef> Distance </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.distance}} </mat-cell>
+        </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="['name', 'address', 'type', 'distance']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['name', 'address', 'type', 'distance']"></mat-row>
+      </mat-table>
 </div>
