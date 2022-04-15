@@ -32,7 +32,7 @@
     z-index: 10;
     border-radius: 15px;
     border: none;
-    background: #000; /* Set the bg image here. with "no-repeat" */
+    background: #000 url('../../assets/search.svg') no-repeat center center;
     cursor: pointer;
 }
 

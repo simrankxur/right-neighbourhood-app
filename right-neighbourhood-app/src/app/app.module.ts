@@ -11,6 +11,7 @@ import { PostcodeDataService } from './postcode-data.service';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { CrimeComponent } from './crime/crime.component';
 import { PricesComponent } from './prices/prices.component';
@@ -36,6 +37,7 @@ import { MapComponent } from './map/map.component';
     MatCardModule,
     MatGridListModule,
     MatTableModule,
+    MatIconModule,
   ],
   providers: [PostcodeDataService],
   bootstrap: [AppComponent]

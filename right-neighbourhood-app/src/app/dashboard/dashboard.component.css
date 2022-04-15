@@ -6,10 +6,19 @@
     color: #0b0b0b;
 }
 
+.grid-box {
+    width: calc(100% - 4px - 2rem);
+    margin: 5rem 1rem 0 1rem;
+    padding-bottom: 2rem;
+}
+
 .mat-grid-tile {
-    /* border: solid 2px #000; */
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     outline: none;
+}
+
+.no-shadow {
+    box-shadow: none !important;
 }
 
 .mat-grid-tile-content

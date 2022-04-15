@@ -6,7 +6,7 @@
         <div class="search">
             <input matInput #postcode class="round" placeholder="Enter a postcode"
                 value="" (keyup.enter)="search(postcode.value)">
-            <input type="submit" class="corner" value="" (click)="search(postcode.value)" />
+            <div class="corner" (click)="search(postcode.value)"></div>
         </div>
         <p *ngIf="showErrorMsg">Please enter a valid postcode</p>
     </div>
