@@ -7,7 +7,9 @@
 }
 
 .mat-grid-tile {
-    border: solid 2px #000;
+    /* border: solid 2px #000; */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    outline: none;
 }
 
 .mat-grid-tile-content

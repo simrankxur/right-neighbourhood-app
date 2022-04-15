@@ -3,7 +3,7 @@
     <mat-table [dataSource]="data">
         <ng-container matColumnDef="price">
           <mat-header-cell *matHeaderCellDef> Price (£ per week) </mat-header-cell>
-          <mat-cell *matCellDef="let row"> {{row.price}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.price | number}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="type">

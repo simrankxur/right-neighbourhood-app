@@ -2,7 +2,9 @@
     <mat-grid-tile colspan="2" rowspan="2">
         <h1 class="title">{{ postcode }}</h1>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="4">Map + transport</mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="4">
+        <app-map class="listing-box" [long]="long" [lat]="lat"></app-map>
+    </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
         <app-prices class="listing-box" [data]="postcodeData?.prices"></app-prices>
     </mat-grid-tile>

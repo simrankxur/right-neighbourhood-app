@@ -15,6 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CrimeComponent } from './crime/crime.component';
 import { PricesComponent } from './prices/prices.component';
 import { RentsComponent } from './rents/rents.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RentsComponent } from './rents/rents.component';
     RestaurantsComponent,
     CrimeComponent,
     PricesComponent,
-    RentsComponent
+    RentsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
