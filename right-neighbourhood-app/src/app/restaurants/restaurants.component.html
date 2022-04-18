@@ -1,5 +1,5 @@
 <div *ngIf="data">
-    <p style="padding-left:1rem;">Restaurants</p>
+    <p class="tile-title">Food / Restaurants / Bars</p>
     <mat-table [dataSource]="data">
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
@@ -20,6 +20,8 @@
           <mat-header-cell *matHeaderCellDef> Distance </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{row.distance}} </mat-cell>
         </ng-container>
+
+        <div *matNoDataRow class="centre">No data found</div>
       
         <mat-header-row *matHeaderRowDef="['name', 'address', 'type', 'distance']"></mat-header-row>
         <mat-row *matRowDef="let row; columns: ['name', 'address', 'type', 'distance']"></mat-row>

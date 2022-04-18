@@ -6,7 +6,13 @@
         <div class="search">
             <input matInput #postcode class="round" placeholder="Enter a postcode"
                 value="" (keyup.enter)="search(postcode.value)">
-            <div class="corner" (click)="search(postcode.value)"></div>
+            <div class="corner" (click)="search(postcode.value)">
+                <img
+                class="search-logo"
+                width="18"
+                alt="search"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNTAwIDUwMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGVsbGlwc2Ugc3R5bGU9InN0cm9rZS13aWR0aDogMjVweDsgc3Ryb2tlOiByZ2IoMjU1LCAyNTUsIDI1NSk7IGZpbGw6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMCk7IiBjeD0iMzA4LjczNCIgY3k9IjE3OC44NTMiIHJ4PSIxMzQuMDU2IiByeT0iMTM0LjA1NiIvPgogIDxwb2x5bGluZSBzdHlsZT0iZmlsbDogcmdiKDIxNiwgMjE2LCAyMTYpOyBzdHJva2Utd2lkdGg6IDI1cHg7IHN0cm9rZS1saW5lY2FwOiByb3VuZDsgc3Ryb2tlOiByZ2IoMjU1LCAyNTUsIDI1NSk7IiBwb2ludHM9IjgxLjI0NSA0MzcuODI0IDIyMC43MTcgMjgxLjg4OCIvPgo8L3N2Zz4="/>
+            </div>
         </div>
         <p *ngIf="showErrorMsg">Please enter a valid postcode</p>
     </div>

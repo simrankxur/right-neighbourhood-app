@@ -1,0 +1,13 @@
+.tile-title {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 7rem;
+    font-weight: 1000;
+    text-transform: uppercase;
+}
+
+.centre {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 1rem;
+}

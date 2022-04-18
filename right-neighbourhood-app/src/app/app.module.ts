@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 import { CrimeComponent } from './crime/crime.component';
 import { PricesComponent } from './prices/prices.component';
 import { RentsComponent } from './rents/rents.component';
@@ -38,6 +39,7 @@ import { MapComponent } from './map/map.component';
     MatGridListModule,
     MatTableModule,
     MatIconModule,
+    MatSelectModule
   ],
   providers: [PostcodeDataService],
   bootstrap: [AppComponent]

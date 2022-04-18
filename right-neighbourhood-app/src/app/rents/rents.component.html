@@ -1,6 +1,17 @@
 <div *ngIf="data">
-    <p style="padding-left:1rem;">Rent</p>
-    <mat-table [dataSource]="data">
+    <p class="tile-title">Rent</p>
+    <mat-form-field appearance="outline">
+      <mat-label>No. of bedrooms</mat-label>
+      <mat-select [(value)]="selected" (selectionChange)="bedroomsFilterChange($event)">
+        <mat-option value="all">Show all</mat-option>
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5+">5+</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-table *ngIf="filteredData" [dataSource]="filteredData">
         <ng-container matColumnDef="price">
           <mat-header-cell *matHeaderCellDef> Price (£ per week) </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{row.price | number}} </mat-cell>
@@ -8,7 +19,7 @@
 
         <ng-container matColumnDef="type">
             <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.type}} </mat-cell>
+            <mat-cell *matCellDef="let row"> {{formatType(row.type)}} </mat-cell>
           </ng-container>
       
         <ng-container matColumnDef="bedrooms">
@@ -17,10 +28,14 @@
         </ng-container>
 
         <ng-container matColumnDef="distance">
-            <mat-header-cell *matHeaderCellDef> Distance </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.distance}} </mat-cell>
-          </ng-container>
+          <mat-header-cell *matHeaderCellDef> Distance </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.distance}} </mat-cell>
+        </ng-container>
       
+        <div *matNoDataRow class="centre">
+          {{ selected != '' ? 'No data matching the filter.' : 'No data found' }}
+        </div>
+
         <mat-header-row *matHeaderRowDef="['price', 'type', 'bedrooms', 'distance']"></mat-header-row>
         <mat-row *matRowDef="let row; columns: ['price', 'type', 'bedrooms', 'distance']"></mat-row>
       </mat-table>

@@ -32,7 +32,7 @@
     z-index: 10;
     border-radius: 15px;
     border: none;
-    background: #000 url('../../assets/search.svg') no-repeat center center;
+    background: #000;
     cursor: pointer;
 }
 
@@ -41,4 +41,8 @@
     width: 35%;
     height: 40px;
     margin: 32px auto;
+}
+
+.search-logo {
+    padding-top: 2.5px;
 }

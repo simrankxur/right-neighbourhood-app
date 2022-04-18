@@ -1,5 +1,5 @@
 <div *ngIf="data">
-    <p style="padding-left:1rem;">Crime</p>
+    <p class="tile-title">Crime</p>
     <mat-table [dataSource]="data">
         <ng-container matColumnDef="category">
           <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
@@ -16,6 +16,8 @@
           <mat-cell *matCellDef="let row"> {{row.month}} </mat-cell>
         </ng-container>
       
+        <div *matNoDataRow class="centre">No data found</div>        
+
         <mat-header-row *matHeaderRowDef="['category', 'street', 'month']"></mat-header-row>
         <mat-row *matRowDef="let row; columns: ['category', 'street', 'month']"></mat-row>
       </mat-table>
