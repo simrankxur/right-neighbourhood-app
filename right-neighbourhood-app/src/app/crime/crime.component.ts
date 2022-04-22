@@ -9,6 +9,7 @@ import { Crime } from '../dashboard/crime';
 export class CrimeComponent implements OnInit {
   constructor() { }
 
+  //Input property for crime data.
   @Input() data: Crime[] | undefined;
 
   ngOnInit(): void {

@@ -30,15 +30,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 
   ngOnInit(): void {
+    //Gets the postcode from the browser address.
     const postcode = this._route.snapshot.queryParamMap.get('postcode');
 
     if (postcode && this.long && this.lat) {
       this.postcode = postcode.toUpperCase();
 
+      //This calls the service method to load all API data.
       this._postcodeService.loadData(postcode, this.long, this.lat)
         .pipe(takeUntil(this.destroyed$))
         .subscribe(data => {
-          this.postcodeData = data;
+          this.postcodeData = data;     //Set the data once loaded.
         });
     } else {
       this._router.navigate(['']);

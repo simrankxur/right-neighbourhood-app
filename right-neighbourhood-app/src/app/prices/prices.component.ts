@@ -18,10 +18,12 @@ export class PricesComponent implements OnInit {
     this.filteredData = this.data;
   }
 
+  //Removes underscores from property type and replaces with space.
   formatType(type: string): string {
     return type.replace(/_/g, ' ');
   }
 
+  //Filters data following dropdown value change.
   bedroomsFilterChange(select: any) {
     let allData = this.data?.slice();
     let value = select.value;

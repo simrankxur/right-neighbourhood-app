@@ -19,9 +19,11 @@ export class MapComponent implements OnInit {
   latNumber: number | undefined;
 
   ngOnInit(): void {
+    //Convert long and lat strings to numbers.
     this.longNumber = Number(this.long);
     this.latNumber = Number(this.lat);
 
+    //Sets properties for Google Maps.
     const mapProperties = {
       center: new google.maps.LatLng(this.latNumber, this.longNumber),
       zoom: 15,
@@ -30,6 +32,7 @@ export class MapComponent implements OnInit {
 
     this.map = new google.maps.Map(this.mapElement?.nativeElement, mapProperties);
 
+    //Adds transport links to the map.
     const transitLayer = new google.maps.TransitLayer();
     transitLayer.setMap(this.map);
   }
