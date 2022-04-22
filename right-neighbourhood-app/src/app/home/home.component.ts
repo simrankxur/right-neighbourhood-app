@@ -20,20 +20,20 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search(userPostcode: string): void {
+  search(userPostcode: string): void {    //Search method is called when the search button is executed.
     this.showErrorMsg = false;
 
-    const postcodeData = this._postcodeService.loadLongAndLat(userPostcode)
+    const postcodeData = this._postcodeService.loadLongAndLat(userPostcode)   
       .pipe(takeUntil(this.destroyed$))
       .subscribe(
         next => {
-          const long = next.result.longitude;
+          const long = next.result.longitude;     //Service method returns the longitude and latitude of the postcode.
           const lat = next.result.latitude;
   
-          this._router.navigate(
+          this._router.navigate(      //Navigates to the next page.
             ['../search'],
-            { queryParams: { postcode: userPostcode },
-              state: { long: long, lat: lat }
+            { queryParams: { postcode: userPostcode },    //The postcode is added to the browser address.
+              state: { long: long, lat: lat }     //Longitude and Latitude is passed.
             });
         },
         error => {

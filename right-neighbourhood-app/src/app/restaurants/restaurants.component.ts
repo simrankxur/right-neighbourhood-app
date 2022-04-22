@@ -9,6 +9,7 @@ import { Restaurant } from '../dashboard/restaurant';
 export class RestaurantsComponent implements OnInit {
   constructor() { }
 
+  //Input property for restaurant data.
   @Input() data: Restaurant[] | undefined;
 
   ngOnInit(): void {
