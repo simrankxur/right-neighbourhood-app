@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Price } from '../dashboard/price';
 
 @Component({
@@ -6,15 +6,21 @@ import { Price } from '../dashboard/price';
   templateUrl: './prices.component.html',
   styleUrls: ['./prices.component.css']
 })
-export class PricesComponent implements OnInit {
+export class PricesComponent implements OnInit, OnChanges {
   constructor() { }
 
   @Input() data: Price[] | undefined;
+  @Input() loading: boolean = false;
 
   filteredData: Price[] | undefined;
   selected = '';
 
   ngOnInit(): void {
+    this.filteredData = this.data;
+  }
+
+  //When inputs changed set data.
+  ngOnChanges(): void {
     this.filteredData = this.data;
   }
 

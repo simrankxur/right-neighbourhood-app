@@ -16,7 +16,7 @@ export class PostcodeDataService {
   ) { }
 
   //PropertyData API key.
-  private readonly apiKey = 'I5T3BNTWP6';
+  private readonly apiKey = 'Z4VNZPC0FA';
   //Postcode with cached data.
   private testPostcode = 'B4 7ET';
 
@@ -36,7 +36,7 @@ export class PostcodeDataService {
       storedData.prices = this.testPostcodeStoredPricesData();
       return of(storedData);
     }
-
+    
     // API call methods.
     const crime = this.getCrimeData(lat, long);
     const restaurants = this.getRestaurantData(postcode);
@@ -46,10 +46,10 @@ export class PostcodeDataService {
     //Waits until all API calls are complete and then returns data converted to models.
     return forkJoin([crime, restaurants, rents, prices]).pipe(map(results => {
       return {
-        crime: <Crime[]>JSON.parse(results[0]),
-        restaurants: <Restaurant[]>JSON.parse(results[1].data.nearby),
-        rents: <Rent[]>JSON.parse(results[2].data.long_let.raw_data),
-        prices: <Price[]>JSON.parse(results[3].data.raw_data)
+        crime: <Crime[]>results[0],
+        restaurants: <Restaurant[]>results[1].data.nearby,
+        rents: <Rent[]>results[2].data.long_let.raw_data,
+        prices: <Price[]>results[3].data.raw_data
       } as PostcodeData;
     }));
   }

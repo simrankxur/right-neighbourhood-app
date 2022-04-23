@@ -6,15 +6,15 @@
         <app-map class="listing-box" [long]="long" [lat]="lat"></app-map>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
-        <app-prices class="listing-box" [data]="postcodeData?.prices"></app-prices>
+        <app-prices class="listing-box" [loading]="loading" [data]="postcodeData?.prices"></app-prices>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
-        <app-restaurants class="listing-box" [data]="postcodeData?.restaurants"></app-restaurants>
+        <app-restaurants class="listing-box" [loading]="loading" [data]="postcodeData?.restaurants"></app-restaurants>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
-        <app-rents class="listing-box" [data]="postcodeData?.rents"></app-rents>
+        <app-rents class="listing-box" [loading]="loading" [data]="postcodeData?.rents"></app-rents>
     </mat-grid-tile>
     <mat-grid-tile colspan="2" rowspan="4">
-        <app-crime class="listing-box" [data]="postcodeData?.crime"></app-crime>
+        <app-crime class="listing-box" [loading]="loading" [data]="postcodeData?.crime"></app-crime>
     </mat-grid-tile>
 </mat-grid-list>

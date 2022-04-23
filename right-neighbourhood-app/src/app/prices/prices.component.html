@@ -1,3 +1,6 @@
+<mat-progress-spinner class="spinner" mode="indeterminate"
+  *ngIf="loading && !data" diameter="35">
+</mat-progress-spinner>
 <div *ngIf="data">
     <p class="tile-title">Prices</p>
     <mat-form-field appearance="outline">

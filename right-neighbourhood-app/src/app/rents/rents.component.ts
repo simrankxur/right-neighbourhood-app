@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Rent } from '../dashboard/rent';
 
 @Component({
@@ -6,15 +6,21 @@ import { Rent } from '../dashboard/rent';
   templateUrl: './rents.component.html',
   styleUrls: ['./rents.component.css']
 })
-export class RentsComponent implements OnInit {
+export class RentsComponent implements OnInit, OnChanges {
   constructor() { }
 
   @Input() data: Rent[] | undefined;
+  @Input() loading: boolean = false;
 
   filteredData: Rent[] | undefined;
   selected = '';
 
   ngOnInit(): void {
+    this.filteredData = this.data;
+  }
+
+  //When inputs changed set data.
+  ngOnChanges(): void {
     this.filteredData = this.data;
   }
 

@@ -11,6 +11,7 @@ export class CrimeComponent implements OnInit {
 
   //Input property for crime data.
   @Input() data: Crime[] | undefined;
+  @Input() loading: boolean = false;
 
   ngOnInit(): void {
   }

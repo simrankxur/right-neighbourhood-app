@@ -11,8 +11,10 @@ export class RestaurantsComponent implements OnInit {
 
   //Input property for restaurant data.
   @Input() data: Restaurant[] | undefined;
+  @Input() loading: boolean = false;
 
   ngOnInit(): void {
+
   }
 
 }

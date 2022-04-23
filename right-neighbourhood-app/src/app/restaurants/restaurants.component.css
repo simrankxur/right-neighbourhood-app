@@ -3,3 +3,7 @@
     font-weight: 1000;
     text-transform: uppercase;
 }
+
+.spinner {
+    margin: 6rem auto;
+}
