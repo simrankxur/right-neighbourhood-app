@@ -16,7 +16,7 @@ export class PostcodeDataService {
   ) { }
 
   //PropertyData API key.
-  private readonly apiKey = 'Z4VNZPC0FA';
+  private readonly apiKey = '';
   //Postcode with cached data.
   private testPostcode = 'B4 7ET';
 
